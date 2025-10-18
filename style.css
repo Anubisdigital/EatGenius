@@ -1,0 +1,9 @@
+body {
+    font-size: 15pt;
+}
+.con{  margin-top: 2px;}
+.teu{ overflow: auto; white-space: nowrap; animation: typ 9s steps(50,end) infinite; font-size: 0.5rem;}
+@keyframes typ{ 
+    from{width:0;}
+    to{width: 100%;}
+}
