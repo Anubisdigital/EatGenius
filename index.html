@@ -1,0 +1,282 @@
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive HTML</title>    <link rel="icon" type="image/png" href="/anubis.png">
+
+  <style>
+    /* Base Styles */
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      padding: 0;
+      background-color: #f0f8ff;
+      line-height: 1.6;
+    }
+    
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .hore {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      
+      color: #E0F5FF;
+      min-height: 50vh;
+      padding: 20px;
+      box-sizing: border-box;
+      
+    }       
+    .video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            z-index: -1; /* Push the video behind the content */word-wrap: break-word;
+        }        #background-video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover; /* This is key to ensuring the video covers the entire viewport without distortion */
+        }
+      
+    
+    .hore h2 {
+      font-size: clamp(3rem, 10vw, 8rem);
+      font-weight: bold;
+      margin: 0;
+      line-height: 1.2;
+      animation: fadeInDown 2.5s ease-out;
+    }
+    
+    .hoe {
+      font-size: 1.5rem;
+      color: #AED6B6;
+      text-transform: lowercase;
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .hoe p {
+      text-transform: none;
+      font-size: 1.2rem;
+      margin: 0;
+    }
+    
+    .hore button {
+      background-color: #3B8033;
+      color: #E2F4FF;
+      height: 8vh;
+      width: clamp(200px, 60vw, 400px);
+      border: none;
+      border-radius: 50px;
+      font-size: clamp(1rem, 5vw, 2.5rem);
+      margin-top: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .hore button:hover {
+      background-color: #2e6427;
+    }
+        
+    .hue {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 50vh;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    
+    .hue-container {      
+      background-color: #E3E3E3;
+      border-radius: 20px;
+      margin: 20px;
+      padding: 2rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      
+    }
+
+    .hue h3 {
+      font-size: clamp(1rem, 4vw, 2.5rem);
+      color: #666866;
+      max-width: 600px;
+      margin: 0;
+    }
+    h3::first-letter{ font-size: 50px;}
+  </style>
+</head>
+<body>
+      <div class="video-container" >
+        <video id="background-video" autoplay muted playsinline >
+            <source src="san.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <script>
+        // 1. Define your playlist
+        const playlist = [
+            'san.mp4', // Video 1
+            'san1.mp4' // Video 2
+            // Add more videos here if you have them!
+        ];
+        
+        // 2. Initialize variables
+        const videoElement = document.getElementById('background-video');
+        const sourceElement = videoElement.querySelector('source');
+        let currentVideoIndex = 0;
+
+        // 3. Define the function to play the next video
+        function playNextVideo() {
+            // Move to the next index in the playlist
+            currentVideoIndex++; 
+            
+            // Check if we've reached the end of the playlist
+            if (currentVideoIndex < playlist.length) {
+                // Get the URL of the next video
+                const nextVideoSrc = playlist[currentVideoIndex];
+                
+                // Update the source element
+                sourceElement.src = nextVideoSrc;
+                
+                // Load the new source and play the video
+                videoElement.load();
+                videoElement.play().catch(error => {
+                    console.error("Autoplay failed for the next video:", error);
+                    // Handle potential autoplay restrictions here if needed
+                });
+
+            } else {
+                // Optional: What to do when the playlist is finished
+                console.log("Playlist finished.");
+                // To loop the whole playlist, uncomment the next two lines:
+                // currentVideoIndex = -1; // Reset the index to start over
+                // playNextVideo();
+            }
+        }
+
+        // 4. Attach the event listener to the video element
+        // The 'ended' event fires when the video finishes playing.
+        videoElement.addEventListener('ended', playNextVideo);
+
+        // Optional: Start playback (useful if 'autoplay' is blocked)
+        videoElement.play().catch(error => {
+             console.log("Initial video autoplay failed. User interaction needed.");
+        });
+
+    </script>
+
+<style>
+        /* Base styles for the body element */
+
+        .black-background {
+            background-color: #3C3005!important;
+            color: white;
+        }
+
+        /* Using a CSS Class (.button1) to style the button */
+        .button1 {
+            padding: 5px 10px;
+            font-size: 4vw;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #066418;
+            color: white;
+            transition: background-color 0.3s; 
+            position: fixed; 
+            right: 1%;
+            top: 1%; /* Added top positioning to make it visible */
+        }
+    </style>
+</head>
+<body>
+
+    <button id="modeButton" class="button1" onclick="toggleBackground()">Dark Mode</button>
+
+    <script>
+        /* JavaScript to handle the click event and toggle the class */
+        function toggleBackground() {
+            // Select the <body> element
+            const body = document.body;
+            
+            // CORRECTED: Select the button using its ID
+            const button = document.getElementById('modeButton');
+
+            // Key line: Toggles the dark mode class on the body
+            body.classList.toggle('black-background');
+
+            // Update the button text and color based on the body's current state
+            if (body.classList.contains('black-background')) {
+                // Background is now black (Dark Mode ON)
+                button.textContent = 'Light Mode';
+                button.style.backgroundColor = '#28a745'; 
+            } else {
+                // Background is now white (Light Mode OFF)
+                button.textContent = 'Dark Mode';
+                // CORRECTED: Ensure you use the 'button' variable for style
+                button.style.backgroundColor = '#066418'; 
+            }
+        }
+    </script>
+  <div class="hore">
+    <h2>
+      NUTRITION
+    </h2>
+    <div class="hoe">
+      <p>
+    Tukwaniliza(welcome) 
+      </p>
+      <div>
+        <p style="color: white; font-size: 1rem;">
+          By Lubega Robert
+        </p>
+      </div>
+      <a href="topic.html">
+              <button>
+       START
+      </button>      </a>
+
+    </div>
+  </div>
+  <div class="hue">
+    <div class="hue-container">
+      <h3>
+       As you shall browse in this website you shall learn about Nutrition in Livingthings and have a deep understanding on the different foods we take in,their nutritional values and health importance along with the health and none health foods and why.<br>You shall
+       discover and appreciate that plants don't feed the same way you do but through <em>
+         Photosynthesis they use sunlight to make starch as their food
+       </em>
+      </h3> 
+    
+    </div>
+  </div>
+  <footer style="color: green; font-size: 3vw;">
+    BY:Lubega Robert a.k.a ANUBIS DIGITAL
+  </footer>
+</body>
+</html>
