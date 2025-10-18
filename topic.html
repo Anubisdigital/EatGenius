@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+
+<body>
+    
+</body>
+
+</html>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biology centre of study</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+  
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f8ff;
+      color: #333;
+      line-height: 1.6;
+    }
+    .hero {
+      background: linear-gradient(rgba(0, 51, 0, 0.8), rgba(0, 51, 0, 0.6)), url('https://images.unsplash.com/photo-1549410196-857501a4e1e3') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero h1 {
+      font-size:35px;
+      margin-bottom: 20px;
+      animation: fadeInDown 1.5s ease-out;position:sticky; top:10px;
+
+    }
+    .hero p {
+      font-size:15px;
+      max-width: 800px;
+      animation: fadeInUp 1.5s ease-out; position:sticky; top:200px;
+    }
+    .feature-item {
+      background: #fff;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      max-width: 800px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .feature-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    .feature-item h3 {
+      color: #2e8b57;
+      font-size: 1.5rem;
+    }
+    .feature-item button {
+      background-color: #2e8b57;
+      color: white;
+      padding: 15px 15px;
+      text-decoration: none;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      margin-top:30px;
+      margin-left:50px;
+      border: none;
+      cursor: pointer;width: 200px;
+    }
+    .feature-item button:hover {
+      background-color: #3cb371;
+    }
+    .link-list {
+        list-style: none;
+        padding: 0;
+        text-align: left;
+        margin-top: 20px;
+    }
+    .link-list li {
+        margin-bottom: 10px;
+    }
+    .link-list a {
+        color: #2e8b57;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .link-list a:hover {
+        text-decoration: underline;
+    }
+{}
+        a:link {
+      color:#2FA15F ;
+    }
+    a:visited {
+      color:#0F4222;}
+      a:active {#FFDD00}
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <h1>Welcome,Let us explore Nutrition together</h1>
+    <p id="greeting-message"></p></div>
+  </div>
+  <div class="feature-item">
+    <h3>Introduction to Nutrition</h3>
+    <details>
+      <summary></summary>
+      <a href="paper2.html#dfi">Defining Nutrition</a><br><br>
+      <a href="paper2.html#het">Heterotrophic nutrition</a><br><br>
+      <a href="paper2.html#auto">Autotrophic nutrition</a><br><br>
+      
+      <br>
+          </details>
+  </div>
+
+
+    </div>
+
+  <div class="feature-item">
+    <h3>FOOD</h3>
+    <details>
+      <summary></summary>
+      <a href="paper2.html#food">Defining food</a><br><br>
+      <a href="paper2.html#car">Carbohydrates</a>
+      <br><br>
+      <a href="paper2.html#test">Testing for carbohydrates</a>      <br><br>
+      <a href="paper2.html#pro">Proteins</a><br><br>    
+      <a href="paper2.html#test1">How to test for proteins</a><br><br>
+            <a href="paper2.html#lip">Lipids</a><br><br>
+      <a href="paper2.html#test2">Testing for lipids</a><br><br>   
+      <a href="paper2.html#vit">Vitamins</a><br><br>   
+       <a href="paper2.html#test3">Testing for Vitamin C</a><br><br>   
+      <a href="paper2.html#rah">Roughages
+</a><br><br>         <a href="paper2.html#min">Mineral elements and salts</a><br><br>   
+
+      <a href="paper2.html#wat">Water</a><br><br>   
+      <a href="paper2.html#enz">Enzymes</a><br><br>   
+       <a href="paper2.html#auto">////</a><br><br>   
+
+      <br>
+          </details>
+  </div>
+
+<script>
+    function updateGreeting() {
+        const date = new Date();
+        const hour = date.getHours();
+        let greeting;
+
+        if (hour >= 5 && hour < 12) {
+            greeting = "Good morning! The early bird gets the worm, and today is a great day to learn.";
+        } else if (hour >= 12 && hour < 18) {
+            greeting = "Good afternoon! Time for some deeper exploration in the world of life sciences.";
+        }
+        else if( hour>= 18 && hour < 22) {
+            greeting = "Good evening! Settle in for some focused study.";
+        }
+        else {
+            greeting = "It's late, but the pursuit of knowledge never rests. Happy learning!";
+        }
+
+        const greetingElement = document.getElementById('greeting-message');
+        if (greetingElement) {
+            greetingElement.textContent = greeting;
+        }
+    }
+
+
+</script><style>
+
+
+ #down {
+    /* Use a more professional color. A dark, slightly transparent green is good for a biology theme. */
+    background: rgba(0, 54, 0, 0.9);
+    border: none;
+    /* Use a fixed position so the navigation stays at the top when users scroll. This is more reliable than sticky. */
+    position: sticky;
+    top:100px;
+    width: 100%; /* Make the navigation bar span the full width of the page. */
+    z-index: 1000; /* Use a high z-index to ensure the navigation bar is always on top of other content. */
+    padding: 10px 0; /* Add some padding to give the links breathing room. */
+    text-align: center; /* Center the text for a clean, modern look. */
+}
+
+/* Style the links to be more visible and professional. */
+#down a {
+    color: greenyellow; /* The color is good, keeping it. */
+    /* Remove the underline for a cleaner look. */
+    font-weight: bold; /* Make the links bold to stand out. */
+    margin: 0 15px; /* Add horizontal spacing between the links. */
+    font-size: 1.1em; /* Make the font slightly larger for better readability. */
+    transition: color 0.3s ease; /* Add a smooth color transition effect on hover. */
+}
+
+/* Change the link color when a user hovers over it. This provides good visual feedback. */
+#down a:hover {
+    color: #ccff00; /* A brighter shade of green for a nice hover effect. */
+}
+
+
+
+</style>
+
+
+
+</body>
+</html>
