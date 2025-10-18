@@ -1,5 +1,4 @@
-
- <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -47,17 +46,18 @@
             width: 100%;
             height: 50%;
             overflow: hidden;
-            z-index: -1; /* Push the video behind the content */word-wrap: break-word;
-        }        #background-video {
+            z-index: -1; /* Push the image behind the content */word-wrap: break-word;
+        }        
+        #background-video {
             min-width: 100%;
             min-height: 100%;
-            width: auto;
+            width: 100%;
             height: auto;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            object-fit: cover; /* This is key to ensuring the video covers the entire viewport without distortion */
+            object-fit: cover; /* Ensures the image covers the entire area without distortion */
         }
       
     
@@ -71,7 +71,7 @@
     
     .hoe {
       font-size: 1.5rem;
-      color: #AED6B6;
+      color: #00FFF2;
       text-transform: lowercase;
       margin-top: 1rem;
       display: flex;
@@ -133,63 +133,8 @@
 </head>
 <body>
       <div class="video-container" >
-        <video id="background-video" autoplay muted playsinline >
-            <source src="san.mp4" type="video/mp4">
-        </video>
+        <img id="background-video" src="mag.jpg" alt="Background Image"  style="background-size: cover;">
     </div>
-
-    <script>
-        // 1. Define your playlist
-        const playlist = [
-            'san.mp4', // Video 1
-            'san1.mp4' // Video 2
-            // Add more videos here if you have them!
-        ];
-        
-        // 2. Initialize variables
-        const videoElement = document.getElementById('background-video');
-        const sourceElement = videoElement.querySelector('source');
-        let currentVideoIndex = 0;
-
-        // 3. Define the function to play the next video
-        function playNextVideo() {
-            // Move to the next index in the playlist
-            currentVideoIndex++; 
-            
-            // Check if we've reached the end of the playlist
-            if (currentVideoIndex < playlist.length) {
-                // Get the URL of the next video
-                const nextVideoSrc = playlist[currentVideoIndex];
-                
-                // Update the source element
-                sourceElement.src = nextVideoSrc;
-                
-                // Load the new source and play the video
-                videoElement.load();
-                videoElement.play().catch(error => {
-                    console.error("Autoplay failed for the next video:", error);
-                    // Handle potential autoplay restrictions here if needed
-                });
-
-            } else {
-                // Optional: What to do when the playlist is finished
-                console.log("Playlist finished.");
-                // To loop the whole playlist, uncomment the next two lines:
-                // currentVideoIndex = -1; // Reset the index to start over
-                // playNextVideo();
-            }
-        }
-
-        // 4. Attach the event listener to the video element
-        // The 'ended' event fires when the video finishes playing.
-        videoElement.addEventListener('ended', playNextVideo);
-
-        // Optional: Start playback (useful if 'autoplay' is blocked)
-        videoElement.play().catch(error => {
-             console.log("Initial video autoplay failed. User interaction needed.");
-        });
-
-    </script>
 
 <style>
         /* Base styles for the body element */
