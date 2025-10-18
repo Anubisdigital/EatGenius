@@ -224,4 +224,169 @@
     BY:Lubega Robert a.k.a ANUBIS DIGITAL
   </footer>
 </body>
+</html>      
+    
+    .hore h2 {
+      font-size: clamp(3rem, 10vw, 8rem);
+      font-weight: bold;
+      margin: 0;
+      line-height: 1.2;
+      animation: fadeInDown 2.5s ease-out;
+    }
+    
+    .hoe {
+      font-size: 1.5rem;
+      color: #00FFF2;
+      text-transform: lowercase;
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .hoe p {
+      text-transform: none;
+      font-size: 1.2rem;
+      margin: 0;
+    }
+    
+    .hore button {
+      background-color: #3B8033;
+      color: #E2F4FF;
+      height: 8vh;
+      width: clamp(200px, 60vw, 400px);
+      border: none;
+      border-radius: 50px;
+      font-size: clamp(1rem, 5vw, 2.5rem);
+      margin-top: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .hore button:hover {
+      background-color: #2e6427;
+    }
+        
+    .hue {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 50vh;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    
+    .hue-container {      
+      background-color: #E3E3E3;
+      border-radius: 20px;
+      margin: 20px;
+      padding: 2rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      
+    }
+
+    .hue h3 {
+      font-size: clamp(1rem, 4vw, 2.5rem);
+      color: #666866;
+      max-width: 600px;
+      margin: 0;
+    }
+    h3::first-letter{ font-size: 50px;}
+  </style>
+</head>
+<body>
+      <div class="video-container" >
+        <img id="background-video" src="mag.jpg" alt="Background Image"  style="background-size: cover;">
+    </div>
+
+<style>
+        /* Base styles for the body element */
+
+        .black-background {
+            background-color: #3C3005!important;
+            color: white;
+        }
+
+        /* Using a CSS Class (.button1) to style the button */
+        .button1 {
+            padding: 5px 10px;
+            font-size: 4vw;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #066418;
+            color: white;
+            transition: background-color 0.3s; 
+            position: fixed; 
+            right: 1%;
+            top: 1%; /* Added top positioning to make it visible */
+        }
+    </style>
+</head>
+<body>
+
+    <button id="modeButton" class="button1" onclick="toggleBackground()">Dark Mode</button>
+
+    <script>
+        /* JavaScript to handle the click event and toggle the class */
+        function toggleBackground() {
+            // Select the <body> element
+            const body = document.body;
+            
+            // CORRECTED: Select the button using its ID
+            const button = document.getElementById('modeButton');
+
+            // Key line: Toggles the dark mode class on the body
+            body.classList.toggle('black-background');
+
+            // Update the button text and color based on the body's current state
+            if (body.classList.contains('black-background')) {
+                // Background is now black (Dark Mode ON)
+                button.textContent = 'Light Mode';
+                button.style.backgroundColor = '#28a745'; 
+            } else {
+                // Background is now white (Light Mode OFF)
+                button.textContent = 'Dark Mode';
+                // CORRECTED: Ensure you use the 'button' variable for style
+                button.style.backgroundColor = '#066418'; 
+            }
+        }
+    </script>
+  <div class="hore">
+    <h2>
+      NUTRITION
+    </h2>
+    <div class="hoe">
+      <p>
+    Tukwaniliza(welcome) 
+      </p>
+      <div>
+        <p style="color: white; font-size: 1rem;">
+          By Lubega Robert
+        </p>
+      </div>
+      <a href="topic.html">
+              <button>
+       START
+      </button>      </a>
+
+    </div>
+  </div>
+  <div class="hue">
+    <div class="hue-container">
+      <h3>
+       As you shall browse in this website you shall learn about Nutrition in Livingthings and have a deep understanding on the different foods we take in,their nutritional values and health importance along with the health and none health foods and why.<br>You shall
+       discover and appreciate that plants don't feed the same way you do but through <em>
+         Photosynthesis they use sunlight to make starch as their food
+       </em>
+      </h3> 
+    
+    </div>
+  </div>
+  <footer style="color: green; font-size: 3vw;">
+    BY:Lubega Robert a.k.a ANUBIS DIGITAL
+  </footer>
+</body>
 </html>
